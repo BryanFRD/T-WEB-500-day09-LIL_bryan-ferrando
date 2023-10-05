@@ -11,6 +11,6 @@ function whoami(){
   } else if($validAge){
     echo "Hi, I have no name and I'm $age years old.";
   } else {
-    echo "Hi.";
+    echo "Hi, I have no name";
   }
 }
