@@ -5,12 +5,12 @@ function whoami(){
   $age = $_POST["age"];
   $validAge = isset($age) && is_numeric($age);
   if(isset($name) && $validAge){
-    echo "Hi, I have no name and I'm $age years old.\n";
+    echo "Hi, I have no name and I'm $age years old.";
   } else if(isset($name)){
-    echo "Hi, my name is $name.\n";
+    echo "Hi, my name is $name.";
   } else if($validAge){
-    echo "Hi, I have no name and I'm $age years old.\n";
+    echo "Hi, I have no name and I'm $age years old.";
   } else {
-    echo "Hi.\n";
+    echo "Hi.";
   }
 }
