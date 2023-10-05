@@ -5,6 +5,13 @@ function form_is_submitted(){
 }
 
 function whoami(){
+  $format = [
+    "pge" => "PGE (Programme Grande Ecole)",
+    "msc" => "MSc Pro",
+    "coding" => "Coding Academy",
+    "wac" => "Web@cademie"
+  ];
+  
   $name = empty($_POST["name"]) ? null : $_POST["name"];
   $age = empty($_POST["age"]) ? null : $_POST["age"];
   $curriculum = empty($_POST["curriculum"]) ? null : $_POST["curriculum"];
@@ -21,6 +28,7 @@ function whoami(){
   }
   
   if(isset($curriculum)){
+    $curriculum = $format[$curriculum];
     $test .= " I'm a student of $curriculum.";
   }
   
