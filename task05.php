@@ -28,8 +28,7 @@ function whoami(){
   }
   
   if(isset($curriculum)){
-    $curriculum = $format[$curriculum];
-    $test .= " I'm a student of $curriculum.";
+    $test .= " I'm a student of $format[$curriculum].";
   }
   
   echo $test;
