@@ -11,13 +11,13 @@ function whoami(){
   $ageValid = isset($age) && is_numeric($age);
   
   if(isset($name) && $ageValid){
-    $test = "Hi, I have no name and I'm $age years old.";
+    $test = "Hi, My name is $name and I'm $age years old.";
   } else if(isset($name)){
     $test = "Hi, my name is $name.";
   } else if($ageValid){
     $test = "Hi, I have no name and I'm $age years old.";
   } else {
-    $test = "Hi.";
+    $test = "Hi, I have no name.";
   }
   
   if(isset($curriculum)){
