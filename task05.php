@@ -9,11 +9,12 @@ function whoami(){
   $age = $_POST["age"];
   $curriculum = $_POST["curriculum"];
   $ageValid = isset($age) && is_numeric($age);
+  $curriculum = $curriculum == '' ? null : $curriculum;
   
   if(isset($name) && $ageValid && isset($curriculum)){
-    echo "Hi, I have no name and I'm $age years old. I'm a student  $curriculum.";
+    echo "Hi, I have no name and I'm $age years old. I'm a student of $curriculum.";
   } else if(isset($name) && isset($curriculum)){
-    echo "Hi, my name is $name. I'm a $curriculum student.";
+    echo "Hi, my name is $name. I'm a student of $curriculum.";
   } else if($ageValid && isset($curriculum)){
     echo "Hi, I have no name and I'm $age years old. I'm a student of $curriculum.";
   } else if(isset($curriculum)){
