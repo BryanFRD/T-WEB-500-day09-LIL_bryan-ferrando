@@ -5,11 +5,10 @@ function form_is_submitted(){
 }
 
 function whoami(){
-  $name = $_POST["name"];
-  $age = $_POST["age"];
-  $curriculum = $_POST["curriculum"];
+  $name = empty($_POST["name"]) ? null : $_POST["name"];
+  $age = empty($_POST["age"]) ? null : $_POST["age"];
+  $curriculum = empty($_POST["curriculum"]) ? null : $_POST["curriculum"];
   $ageValid = isset($age) && is_numeric($age);
-  $curriculum = $curriculum == '' ? null : $curriculum;
   
   if(isset($name) && $ageValid && isset($curriculum)){
     echo "Hi, I have no name and I'm $age years old. I'm a student of $curriculum.";
@@ -18,9 +17,9 @@ function whoami(){
   } else if($ageValid && isset($curriculum)){
     echo "Hi, I have no name and I'm $age years old. I'm a student of $curriculum.";
   } else if(isset($curriculum)){
-    echo "Hi. I'm a $curriculum student.";
+    echo "Hi. I'm a student of $curriculum.";
   } else if(isset($name) && $ageValid){
-    echo "Hi, I have no name and I'm $age years old.";
+    echo "Hi, my name is $name and I'm $age years old.";
   } else if(isset($name)){
     echo "Hi, my name is $name.";
   } else if($ageValid){
